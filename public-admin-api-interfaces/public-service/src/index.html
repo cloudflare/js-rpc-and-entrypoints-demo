@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>To Do App</title>
+	</head>
+	<body>
+		<h1>To Do App</h1>
+		<p>
+			Register now and start adding tasks! Our users have already created
+			<code id="tasks"></code> tasks!
+		</p>
+		<form method="POST">
+			<label>
+				Username:
+				<input
+					name="username"
+					required
+					pattern="[a-zA-Z0-9_-]"
+					maxlength="50"
+					minlength="1"
+				/>
+			</label>
+			<button>Sign in or register</button>
+			<p id="error"></p>
+		</form>
+	</body>
+</html>

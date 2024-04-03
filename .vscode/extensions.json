@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "mtxr.sqltools-driver-sqlite",
+    "mtxr.sqltools",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "tamasfe.even-better-toml",
+    "christian-kohler.npm-intellisense",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors"
+  ]
+}

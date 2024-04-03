@@ -1,0 +1,9 @@
+#:schema disabled
+name = "private-service"
+compatibility_date = "2024-04-03"
+main = "./src/index.ts"
+
+[[services]]
+binding = "STORE"
+service = "db-service"
+entrypoint = "AdminStore"

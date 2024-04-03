@@ -1,0 +1,12 @@
+{
+  "sqltools.connections": [
+    {
+      "name": "todo-app",
+      "driver": "SQLite",
+      "database": "./public-admin-api-interfaces/db-service/.wrangler/state/v3/d1/miniflare-D1DatabaseObject/e102958f9f3d7c16a4efe6ecf2b54146843ba810f49017e5a43ecb2af0cee1e1.sqlite",
+      "connectionTimeout": 15
+    }
+  ],
+  "sqltools.useNodeRuntime": true,
+  "typescript.tsdk": "./node_modules/typescript/lib"
+}

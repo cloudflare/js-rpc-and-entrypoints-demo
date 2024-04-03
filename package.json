@@ -1,0 +1,70 @@
+{
+	"name": "@cloudflare/js-rpc-and-entrypoints-demo",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cloudflare/js-rpc-and-entrypoints-demo.git"
+	},
+	"type": "module",
+	"workspaces": [
+		"./public-admin-api-interfaces",
+		"./discord-bot"
+	],
+	"scripts": {
+		"eslint": "npx eslint . --ignore-path .gitignore --cache --cache-location ./.eslintcache",
+		"format": "npm run prettier -- --check",
+		"format:fix": "npm run prettier -- --write",
+		"lint": "npm run eslint",
+		"lint:fix": "npm run eslint -- --fix",
+		"prettier": "npx prettier .",
+		"validate": "CI=true npx concurrently --group -n lint,format,test,typecheck \"npm:lint\" \"npm:format\" \"npm run test --workspaces\" \"npm run typecheck --workspaces\""
+	},
+	"prettier": {
+		"plugins": [
+			"prettier-plugin-organize-imports",
+			"prettier-plugin-packagejson",
+			"prettier-plugin-sort-json"
+		]
+	},
+	"eslintConfig": {
+		"parser": "@typescript-eslint/parser",
+		"plugins": [
+			"@typescript-eslint",
+			"eslint-plugin-isaacscript",
+			"eslint-plugin-unicorn"
+		],
+		"extends": [
+			"eslint:recommended",
+			"plugin:@typescript-eslint/eslint-recommended",
+			"plugin:@typescript-eslint/recommended"
+		],
+		"rules": {
+			"isaacscript/no-template-curly-in-string-fix": "error",
+			"unicorn/expiring-todo-comments": "error"
+		},
+		"root": true
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "4.20240404.0",
+		"@typescript-eslint/eslint-plugin": "7.5.0",
+		"@typescript-eslint/parser": "7.5.0",
+		"concurrently": "8.2.2",
+		"eslint": "8.57.0",
+		"eslint-plugin-isaacscript": "3.12.2",
+		"eslint-plugin-unicorn": "51.0.1",
+		"prettier": "3.2.5",
+		"prettier-plugin-organize-imports": "3.2.4",
+		"prettier-plugin-packagejson": "2.4.14",
+		"prettier-plugin-sort-json": "4.0.0",
+		"typescript": "5.4.3",
+		"wrangler": "^0.0.0-d27c287a"
+	},
+	"engines": {
+		"node": "20.12.0",
+		"npm": "10.5.0"
+	},
+	"volta": {
+		"node": "20.12.0",
+		"npm": "10.5.0"
+	}
+}

@@ -1,0 +1,19 @@
+#:schema disabled
+name = "db-service"
+compatibility_date = "2024-04-03"
+main = "src/index.ts"
+
+[[d1_databases]]
+binding = "D1"
+database_name = "todo-app"
+database_id = "ee5a15b7-c204-4621-a1ff-abd97d433514" # change this if you're deploying this yourself!
+
+[[services]]
+binding = "STORE"
+service = "db-service"
+entrypoint = "AdminStore"
+
+# to routinely clean up our public demo
+# feel free to remove this if you're deploying this yourself!
+[triggers]
+crons = ["*/5 * * * *"]

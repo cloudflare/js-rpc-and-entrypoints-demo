@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Admin Service</title>
+	</head>
+	<body>
+		<h1>[ADMIN] To Do App</h1>
+		<dl>
+			<dt>Number of users</dt>
+			<dd><code id="users"></code></dd>
+			<dt>Number of tasks</dt>
+			<dd><code id="tasks"></code></dd>
+			<dt>Number of completed tasks</dt>
+			<dd><code id="completed-tasks"></code></dd>
+		</dl>
+		<form method="POST">
+			<input type="hidden" name="action" value="delete-users" />
+			<button>Delete all users</button>
+		</form>
+		<form method="POST">
+			<input type="hidden" name="action" value="delete-tasks" />
+			<button>Delete all tasks</button>
+		</form>
+		<form method="POST">
+			<input type="hidden" name="action" value="delete-completed-tasks" />
+			<button>Delete all completed tasks</button>
+		</form>
+	</body>
+</html>

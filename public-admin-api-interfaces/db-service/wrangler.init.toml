@@ -1,0 +1,9 @@
+#:schema disabled
+# This file is needed temporarily to account for an API bug which prevents
+# you from one-shot creating a Worker service with a binding to itself.
+# We plan to fix this shortly. In the meantime, this file creates the service
+# to begin with without that binding, and then you can deploy it for real
+# with the binding, immediately afterwards.
+name = "db-service"
+compatibility_date = "2024-04-03"
+main = "src/index.ts"

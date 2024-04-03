@@ -1,0 +1,46 @@
+{
+	"name": "@cloudflare/public-admin-api-interfaces",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cloudflare/js-rpc-and-entrypoints-demo.git",
+		"directory": "./public-admin-api-interfaces"
+	},
+	"type": "module",
+	"scripts": {
+		"predeploy": "npm run validate",
+		"deploy": "npm run migrations:apply:remote && npm run deploy:db-service && npm run deploy:public-service && npm run deploy:admin-service",
+		"deploy:admin-service": "npx wrangler deploy -c admin-service/wrangler.toml",
+		"predeploy:db-service": "npx wrangler deploy -c db-service/wrangler.init.toml",
+		"deploy:db-service": "npx wrangler deploy -c db-service/wrangler.toml",
+		"deploy:public-service": "npx wrangler deploy -c public-service/wrangler.toml",
+		"predev": "npm run migrations:apply:local",
+		"dev": "npx concurrently -n db-service,public-service,admin-service -k \"npm run dev:db-service\" \"sleep 2 && npm run dev:public-service\" \"sleep 4 && npm run dev:admin-service\"",
+		"dev:admin-service": "sleep 4 && npx wrangler dev -c admin-service/wrangler.toml --port 9001",
+		"dev:db-service": "npx wrangler dev -c db-service/wrangler.toml --port 8787 --test-scheduled",
+		"dev:public-service": "sleep 2 && npx wrangler dev -c public-service/wrangler.toml --port 9000",
+		"eslint": "npx eslint . --ignore-path ../.gitignore --cache --cache-location ../.eslintcache",
+		"format": "npm run prettier -- --check",
+		"format:fix": "npm run prettier -- --write",
+		"lint": "npm run eslint",
+		"lint:fix": "npm run eslint -- --fix",
+		"migrations:apply:local": "CI=true npx wrangler d1 migrations apply todo-app --local -c db-service/wrangler.toml",
+		"migrations:apply:remote": "CI=true npx wrangler d1 migrations apply todo-app --remote -c db-service/wrangler.toml",
+		"prettier": "npx prettier . --ignore-path ../.gitignore",
+		"test": "npx vitest",
+		"typecheck": "npm run typescript -- --noEmit",
+		"typescript": "npx tsc",
+		"validate": "CI=true npx concurrently --group \"npm:lint\" \"npm:format\" \"npm:test\" \"npm:typecheck\""
+	},
+	"devDependencies": {
+		"vitest": "1.4.0"
+	},
+	"engines": {
+		"node": "20.12.0",
+		"npm": "10.5.0"
+	},
+	"volta": {
+		"node": "20.12.0",
+		"npm": "10.5.0"
+	}
+}

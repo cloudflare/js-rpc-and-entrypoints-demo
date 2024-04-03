@@ -1,0 +1,9 @@
+#:schema disabled
+name = "discord-bot"
+compatibility_date = "2024-04-03"
+main = "./integrations-marketplace/discord.ts"
+
+[[services]]
+binding = "DISCORD_BOT"
+service = "discord-bot"
+entrypoint = "DiscordBot"
