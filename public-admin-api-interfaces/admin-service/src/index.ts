@@ -2,7 +2,7 @@ import type { AdminStore } from "../../db-service/src/index.js";
 import homePage from "./index.html";
 
 interface Env {
-	STORE: AdminStore;
+	STORE: Service<AdminStore>;
 }
 
 export default {
