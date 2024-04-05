@@ -1,6 +1,10 @@
-# JS RPC and Entrypoints demos
+# JavaScript-native RPC on Cloudflare Workers <> Named Entrypoints — Demos
 
-This monorepo showcases two different examples of using RPC and Entrypoints in Cloudflare Workers.
+This is a collection of examples of communicating between multiple Cloudflare Workers using the [remote-procedure call (RPC) system](https://developers.cloudflare.com/workers/runtime-apis/rpc) that is built into the Workers runtime.
+
+Specifically, these examples highight patterns for how to expose multiple [named entrypoints](https://developers.cloudflare.com/workers/runtime-apis/bindings/service-bindings/rpc/#named-entrypoints) from a single Cloudflare Worker, and bind directly to them using [Service bindings](https://developers.cloudflare.com/workers/runtime-apis/bindings/service-bindings/rpc/).
+
+## Demos
 
 1. [Public & Admin API Interfaces](./public-admin-api-interfaces/README.md)
 
