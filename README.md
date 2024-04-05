@@ -4,6 +4,8 @@ This is a collection of examples of communicating between multiple Cloudflare Wo
 
 Specifically, these examples highight patterns for how to expose multiple [named entrypoints](https://developers.cloudflare.com/workers/runtime-apis/bindings/service-bindings/rpc/#named-entrypoints) from a single Cloudflare Worker, and bind directly to them using [Service bindings](https://developers.cloudflare.com/workers/runtime-apis/bindings/service-bindings/rpc/).
 
+Learn more about the RPC system in Cloudflare Workers by reading the [blog post](https://blog.cloudflare.com/javascript-native-rpc).
+
 ## Demos
 
 1. [Public & Admin API Interfaces](./public-admin-api-interfaces/README.md)
@@ -17,8 +19,6 @@ Specifically, these examples highight patterns for how to expose multiple [named
    ![Diagram of the discord-bot system](./discord-bot-overview.png)
 
    This is a Discord bot, written as a Worker Entrypoint. It sketches a possible future where application integrations could be written as Worker Entrypoints, without needing to worry about boilerplate like routing or authentication (and instead, just with simple JavaScript hook-like functionality).
-
-Learn more about the RPC system in Cloudflare Workers by reading the [blog post](https://blog.cloudflare.com/javascript-native-rpc).
 
 ## Getting started
 
